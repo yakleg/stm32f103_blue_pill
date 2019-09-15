@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmsis_os.h": "c",
+			"stm32f1xx_hal.h": "c",
+			"main.h": "c",
+			"usart.h": "c"
+		}
+	}
+}
