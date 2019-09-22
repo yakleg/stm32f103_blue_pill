@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "GDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/stm32f103_blue_pill.elf",
+            "cwd": "${workspaceRoot}",
+            "targetArchitecture": "arm",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/opt/gcc-arm-none-eabi-8-2019-q3-update/bin/arm-none-eabi-gdb",
+            "miDebuggerServerAddress": "localhost:3333",
+            "preLaunchTask": "gdbhost",
+            "setupCommands": [
+                {
+                    "text": "set architecture arm"
+                },
+                {
+                    "text": "file ${workspaceRoot}/build/stm32f103_blue_pill.elf"
+                },
+                {
+                    "text": "symbol-file ${workspaceRoot}/build/stm32f103_blue_pill.elf"
+                }
+            ]
+        }
+    ]
+}

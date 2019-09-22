@@ -191,7 +191,21 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 
+  for (int i = 0; i < 3; ++i)
+  {
+    osDelay(50);
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    osDelay(100);
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    osDelay(200);
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    osDelay(200);
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+  }
+
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
   /* USER CODE END Error_Handler_Debug */
 }
 

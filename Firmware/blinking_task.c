@@ -1,23 +1,24 @@
-#include <stm32f1xx_hal.h>
-#include <main.h>
-#include <usbd_cdc_if.h>
-// #include <usart.h>
-
+#include <stdio.h>
 #include <string.h>
+
+#include <stm32f1xx_hal.h>
+#include <cmsis_os.h>
+#include <main.h>
+
+
 
 extern void blinkingTask(void const *argument);
 
 void blinkingTask(void const *argument)
 {
-    int counter = 0;
-    char buffer[100];
+    uint32_t counter = 0;
+    HAL_Delay(1000);
 
     while (1)
     {
-        HAL_Delay(1000);
-        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0);
+        osDelay(50);
+        HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 
-        sprintf(buffer, "Hello World! Log # %d\r\n", ++counter);
-        CDC_Transmit_FS((uint8_t *)&buffer, strlen(buffer));
+        printf("Hello World! Log # %lu\r\n", ++counter);
     }
 }

@@ -114,7 +114,7 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of blinking */
-  osThreadStaticDef(blinking, blinkingTask, osPriorityNormal, 0, 128, blinkingBuffer, &blinkingControlBlock);
+  osThreadStaticDef(blinking, blinkingTask, osPriorityIdle, 0, 128, blinkingBuffer, &blinkingControlBlock);
   blinkingHandle = osThreadCreate(osThread(blinking), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */

@@ -9,7 +9,15 @@
 			"cmsis_os.h": "c",
 			"stm32f1xx_hal.h": "c",
 			"main.h": "c",
-			"usart.h": "c"
+			"usart.h": "c",
+			"usbd_cdc.h": "c",
+			"array": "c",
+			"string": "c",
+			"string_view": "c",
+			"errno.h": "c",
+			"functional": "c",
+			"usbd_cdc_if.h": "c",
+			"unistd.h": "c"
 		}
 	}
 }
